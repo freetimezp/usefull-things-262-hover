@@ -9,3 +9,92 @@
 a {
     text-decoration: none;
 }
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #141414;
+}
+
+.container {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: transparent;
+    border: 10px solid transparent;
+    padding: 10px;
+    transition: all 0.5s ease-in-out;
+    box-shadow: none;
+    transition-delay: 0.3s;
+}
+
+.shape {
+    background: #fff;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    transform: rotate(45deg) scale(1.2);
+    border: 10px solid #00f5a7;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+.shape p {
+    padding: 25px;
+    display: inline-block;
+    text-align: center;
+    transform: rotate(-45deg) translate(-25px, 25px);
+    font-size: 14px;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 90%;
+    background: #00ad76;
+    left: 50px;
+    top: 5%;
+    transition: 0.5s;
+    opacity: 0;
+    transition-delay: 0.4s;
+    z-index: -2;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 90%;
+    background: #00ad76;
+    right: 50px;
+    top: 5%;
+    transition: 0.5s;
+    opacity: 0;
+    transition-delay: 0.4s;
+    z-index: -2;
+}
+
+.container:hover::before {
+    left: -40px;
+    opacity: 1;
+}
+.container:hover::after {
+    right: -40px;
+    opacity: 1;
+}
+
+.container:hover .shape {
+    border-radius: 0;
+}
+
+.container:hover {
+    background: #fff;
+    border: 10px solid #18d498;
+}
