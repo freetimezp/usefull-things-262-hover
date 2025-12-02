@@ -5,11 +5,11 @@ menuLinks.forEach((link) => {
     link.addEventListener("mouseenter", () => {
         const text = link.textContent.trim().toLowerCase();
 
-        hero.className = "hero"; // reset previous class
+        hero.className = "hero";
         hero.classList.add(`hero-${text}`);
     });
 
     link.addEventListener("mouseleave", () => {
-        hero.className = "hero"; // reset to default
+        hero.className = "hero";
     });
 });
